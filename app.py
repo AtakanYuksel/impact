@@ -1,6 +1,5 @@
-import streamlit as st
 import numpy as np
-
+import streamlit as st
 
 st.set_page_config(
     page_title="IMPACT",
@@ -15,16 +14,14 @@ with st.container(border=True):
     ecog = st.selectbox("ECOG:", ("0-1", "2-3-4"), index=None, key="ecog")
     monocyte = st.number_input(
         label="Monocyte (mm\u00b3)",
-        step=0.01,
-        value=0.00,
-        format="%0.2f",
+        step=1,
+        value=0,
         key="monocyte",
     )
 
     albumin = st.number_input(
         label="Albumin (g/dl)", step=0.01, value=0.00, format="%0.2f", key="albumin"
     )
-
 
     score = 0
     if ecog == "2-3-4":
